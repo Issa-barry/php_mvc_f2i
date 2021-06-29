@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{DOCUMENT_ROOT}/Public/$1 -f
+RewriteRule (.*) /Public/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) Application/index.php?url=$1
